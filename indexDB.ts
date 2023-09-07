@@ -260,6 +260,20 @@ const users = [
 const testDB = async () => {
   try {
     const db = await IndexedDatabase('pos', { schema: schemaMockup });
+    const create = await db.users.createOne({
+      created_at: new Date(),
+      email: 'leeroy7johnson@gmail.com',
+      first_name: 'Leeroy',
+      last_name: 'Johnson',
+      password: 'qwerty',
+    })
+    console.log(create)
+    const get = await db.users.getOne('email', 'leeroy7johnson@gmail.com');
+    console.log(get);
+    const update = await db.users.updateOne(1, { email: 'game@gmail.com' })
+    console.log(update);
+    const del = await db.users.deleteOne(1);
+    console.log(del);
   } catch (error: any) {
     console.log(error);
   }
