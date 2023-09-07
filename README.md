@@ -181,3 +181,5 @@ const initialise  = async () => {
    console.log(delDB)
 }
 ```
+
+**11\. I have so much i am doing right now. I will convert this to a library when i have the chance. For now, download the indexDB.ts and use/modify it in you project**
