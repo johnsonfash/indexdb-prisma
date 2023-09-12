@@ -24,7 +24,7 @@ Given the major advantage IndexDB possess in storage space, along with the non s
 1\. import database instance to project file
 
 ```typescript
-import IndexedDatabase from 'indexDB';
+import {IndexedDatabase} from 'indexdb-prisma';
 
 const initialise  = async () => {
    const db = await IndexedDatabase('pos', { schema: schemaMockup });
@@ -78,7 +78,7 @@ Promise base query (much like prisma) makes using IndexDb much easier and straig
 **6\. To create new `user`**
 
 ```typescript
-import IndexedDatabase from 'indexDB';
+import {IndexedDatabase} from 'indexdb-prisma';
 
 const initialise  = async () => {
    const db = await IndexedDatabase('pos', { schema: schemaMockup });
@@ -96,7 +96,7 @@ const initialise  = async () => {
 **7\. To get a `user`**
 
 ```typescript
-import IndexedDatabase from 'indexDB';
+import {IndexedDatabase} from 'indexdb-prisma';
 
 const initialise  = async () => {
    const db = await IndexedDatabase('pos', { schema: schemaMockup });
@@ -110,7 +110,7 @@ const initialise  = async () => {
 **8\. To update a `user`**
 
 ```typescript
-import IndexedDatabase from 'indexDB';
+import {IndexedDatabase} from 'indexdb-prisma';
 
 const initialise  = async () => {
    const db = await IndexedDatabase('pos', { schema: schemaMockup });
@@ -124,7 +124,7 @@ const initialise  = async () => {
 **9\. To delete a `user`**
 
 ```typscript
-import IndexedDatabase from 'indexDB';
+import {IndexedDatabase} from 'indexdb-prisma';
 
 const initialise  = async () => {
    const db = await IndexedDatabase('pos', { schema: schemaMockup });
@@ -144,7 +144,7 @@ const initialise  = async () => {
 - All this can be done in the options provided while initialising your database
 
 ```
-import IndexedDatabase from 'indexDB';
+import {IndexedDatabase} from 'indexdb-prisma';
 
 
 const schemaMockup = {
@@ -173,7 +173,7 @@ const initialise  = async () => {
 **11\. To delete `database`**
 
 ```typescript
-import IndexedDatabase from 'indexDB';
+import {IndexedDatabase} from 'indexdb-prisma';
 
 const initialise  = async () => {
    const db = await IndexedDatabase('pos', { schema: schemaMockup });
