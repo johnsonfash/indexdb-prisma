@@ -44,6 +44,8 @@ These types can be imported for use in your schema file.
 **4\. Example schema object and explanation**
 
 ```typescript
+import { AutoIncrement, StringType, DateType } from 'indexdb-prisma';
+
 const schemaMockup = {
   users: {
     id: AutoIncrement,
@@ -123,7 +125,7 @@ const initialise  = async () => {
 
 **9\. To delete a `user`**
 
-```typscript
+```typescript
 import { IndexedDatabase } from 'indexdb-prisma';
 
 const initialise  = async () => {
@@ -142,8 +144,8 @@ const initialise  = async () => {
 - Increase your database version to higher number. Must be a whole number for this to work
 - All this can be done in the options provided while initialising your database
 
-```
-import { IndexedDatabase } from 'indexdb-prisma';
+```typescript
+import { IndexedDatabase, AutoIncrement , StringType, DateType } from 'indexdb-prisma';
 
 
 const schemaMockup = {
@@ -176,7 +178,7 @@ import { IndexedDatabase } from 'indexdb-prisma';
 
 const initialise  = async () => {
    const db = await IndexedDatabase('pos', { schema: schemaMockup });
-   const delDB =  await db.$ref.deleteDatabase()
+   const delDB =  await db.$transaction.deleteDatabase()
    console.log(delDB)
 }
 ```
