@@ -123,7 +123,7 @@ const initialise  = async () => {
 }
 ```
 
-**9\. To delete a `user`**
+**9\. To delete one or all `user`**
 
 ```typescript
 import { IndexedDatabase } from 'indexdb-prisma';
@@ -132,17 +132,17 @@ const initialise  = async () => {
    const db = await IndexedDatabase('pos', { schema: schemaMockup });
    const del =  const del = await db.users.deleteOne(1);
    // OR
+   const del =  const del = await db.users.deleteMany();
    const del = await db.users.deleteOne({column: 'email', value: 'fashanutosin7@gmail.com'})
    console.log(del)
 }
 ```
 
 **6\. To delete, add new tables a `table`**
-**Deleting a table is much more complicated compared to deleting a database in indexdb due to running process/transactions. To do so, you must ensure you do two things.
+**To delete a table you must ensure you do two things.
 
-- Insert the array of table names you want to delete as an option in the db initialization and also update your schema file to add/remove new table names
-- Increase your database version to higher number. Must be a whole number for this to work
-- All this can be done in the options provided while initialising your database
+- Update your schema file by adding/removing new table names
+- Increase your database version to a higher number. Must be a whole number for this to work
 
 ```typescript
 import { IndexedDatabase, AutoIncrement , StringType, DateType } from 'indexdb-prisma';
@@ -167,7 +167,7 @@ const schemaMockup = {
 }
 
 const initialise  = async () => {
-   const db = await IndexedDatabase('pos', { schema: schemaMockup , version: 2, deleteTables: ['comments']})
+   const db = await IndexedDatabase('pos', { schema: schemaMockup , version: 2)
 }
 ```
 
